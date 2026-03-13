@@ -1,0 +1,47 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1773389695741,
+  "projectRoot": "/Users/chamdom/Develop/git-aquarium",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {},
+  "hotPaths": [
+    {
+      "path": "PRD.md",
+      "accessCount": 9,
+      "lastAccessed": 1773390300562,
+      "type": "file"
+    },
+    {
+      "path": "",
+      "accessCount": 1,
+      "lastAccessed": 1773391497276,
+      "type": "directory"
+    }
+  ],
+  "userDirectives": []
+}
