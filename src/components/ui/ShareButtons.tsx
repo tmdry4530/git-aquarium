@@ -42,7 +42,7 @@ function ShareButtons({ username }: ShareButtonsProps) {
 
   return (
     <div
-      className="flex items-center gap-2"
+      className="fixed bottom-4 right-4 z-30 flex items-center gap-2"
       role="group"
       aria-label="Share options"
     >

@@ -19,7 +19,7 @@ function StatsHUD() {
       <button
         onClick={() => setVisible((v) => !v)}
         aria-label={visible ? 'Hide HUD' : 'Show HUD'}
-        className="fixed top-4 left-4 z-30 w-8 h-8 rounded-full border border-primary/40 bg-[rgba(5,15,35,0.85)] text-primary text-xs flex items-center justify-center hover:border-primary transition-colors md:hidden"
+        className="fixed top-4 left-4 z-30 w-8 h-8 rounded-full border border-primary/40 bg-[rgba(5,15,35,0.85)] text-primary text-xs flex items-center justify-center hover:border-primary transition-colors"
       >
         {visible ? '−' : '+'}
       </button>
@@ -27,7 +27,7 @@ function StatsHUD() {
       {/* HUD panel */}
       {visible && (
         <aside
-          className="fixed top-4 left-4 z-20 rounded-xl border border-primary/20 bg-[rgba(5,15,35,0.85)] backdrop-blur-sm p-3 md:p-4 min-w-[140px] md:min-w-[180px]"
+          className="fixed top-14 left-4 z-20 rounded-xl border border-primary/20 bg-[rgba(5,15,35,0.85)] backdrop-blur-sm p-3 md:p-4 min-w-[140px] md:min-w-[180px]"
           aria-label="Aquarium stats"
         >
           {/* Username */}

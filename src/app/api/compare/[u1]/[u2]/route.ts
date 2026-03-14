@@ -49,10 +49,14 @@ export async function GET(
       users: [aquarium1, aquarium2],
       stats,
     })
-  } catch {
-    return NextResponse.json(
-      { error: 'Failed to fetch aquarium data' },
-      { status: 500 },
-    )
+  } catch (err) {
+    const message =
+      err instanceof Error ? err.message : 'Failed to fetch aquarium data'
+    const status = message.includes('NOT_FOUND')
+      ? 404
+      : message.includes('RATE_LIMITED')
+        ? 429
+        : 500
+    return NextResponse.json({ error: message }, { status })
   }
 }

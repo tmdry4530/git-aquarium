@@ -23,9 +23,15 @@ export default async function LocaleLayout({
   const rawMessages = await getMessages()
   const messages = JSON.parse(JSON.stringify(rawMessages)) as typeof rawMessages
 
+  const authEnabled = !!(
+    process.env.AUTH_SECRET &&
+    process.env.GITHUB_CLIENT_ID &&
+    process.env.GITHUB_CLIENT_SECRET
+  )
+
   return (
     <NextIntlClientProvider messages={messages}>
-      <AuthProvider>{children}</AuthProvider>
+      <AuthProvider enabled={authEnabled}>{children}</AuthProvider>
     </NextIntlClientProvider>
   )
 }

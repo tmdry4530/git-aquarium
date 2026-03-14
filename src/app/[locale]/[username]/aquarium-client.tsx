@@ -5,6 +5,7 @@ import { useAquariumStore } from '@/stores/aquarium'
 import { StatsHUD } from '@/components/ui/StatsHUD'
 import { FishTooltip } from '@/components/ui/FishTooltip'
 import { FishDetailPanel } from '@/components/ui/FishDetailPanel'
+import { ShareButtons } from '@/components/ui/ShareButtons'
 import { AquariumScene } from '@/engine/scene/AquariumScene'
 import { Environment } from '@/engine/scene/Environment'
 import { FishGroup } from '@/engine/fish/FishGroup'
@@ -44,6 +45,7 @@ function AquariumClient({ data }: AquariumClientProps) {
       <StatsHUD />
       <FishTooltip />
       <FishDetailPanel />
+      <ShareButtons username={data.user.username} />
     </div>
   )
 }
