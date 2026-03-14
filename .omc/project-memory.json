@@ -1,46 +1,482 @@
 {
   "version": "1.0.0",
-  "lastScanned": 1773389695741,
-  "projectRoot": "/Users/chamdom/Develop/git-aquarium",
+  "lastScanned": 1773478829520,
+  "projectRoot": "/home/chamdom/Develop/git-aquarium",
   "techStack": {
-    "languages": [],
-    "frameworks": [],
-    "packageManager": null,
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": ["package.json"]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": ["tsconfig.json"]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "next",
+        "version": "16.1.6",
+        "category": "fullstack"
+      },
+      {
+        "name": "react",
+        "version": "19.2.3",
+        "category": "frontend"
+      },
+      {
+        "name": "react-dom",
+        "version": "19.2.3",
+        "category": "frontend"
+      },
+      {
+        "name": "@playwright/test",
+        "version": "1.58.2",
+        "category": "testing"
+      },
+      {
+        "name": "vitest",
+        "version": "4.1.0",
+        "category": "testing"
+      }
+    ],
+    "packageManager": "pnpm",
     "runtime": null
   },
   "build": {
-    "buildCommand": null,
-    "testCommand": null,
-    "lintCommand": null,
-    "devCommand": null,
-    "scripts": {}
+    "buildCommand": "pnpm build",
+    "testCommand": "pnpm test",
+    "lintCommand": "pnpm lint",
+    "devCommand": "pnpm dev",
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "lint": "eslint",
+      "test": "vitest run",
+      "test:watch": "vitest",
+      "test:coverage": "vitest run --coverage",
+      "test:e2e": "playwright test",
+      "prepare": "husky"
+    }
   },
   "conventions": {
     "namingStyle": null,
     "importStyle": null,
     "testPattern": null,
-    "fileOrganization": null
+    "fileOrganization": "type-based"
   },
   "structure": {
-    "isMonorepo": false,
+    "isMonorepo": true,
     "workspaces": [],
-    "mainDirectories": [],
-    "gitBranches": null
+    "mainDirectories": ["docs", "public", "src", "tests"],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
   },
   "customNotes": [],
-  "directoryMap": {},
+  "directoryMap": {
+    "coverage": {
+      "path": "coverage",
+      "purpose": null,
+      "fileCount": 9,
+      "lastAccessed": 1773478829499,
+      "keyFiles": [
+        "base.css",
+        "block-navigation.js",
+        "coverage-final.json",
+        "favicon.png",
+        "index.html"
+      ]
+    },
+    "docs": {
+      "path": "docs",
+      "purpose": "Documentation",
+      "fileCount": 9,
+      "lastAccessed": 1773478829500,
+      "keyFiles": [
+        "3d-scene-architecture.md",
+        "aquarium-data-schema.md",
+        "component-tree.md",
+        "design-tokens.md",
+        "fish-species-map.md"
+      ]
+    },
+    "public": {
+      "path": "public",
+      "purpose": "Public files",
+      "fileCount": 5,
+      "lastAccessed": 1773478829512,
+      "keyFiles": [
+        "file.svg",
+        "globe.svg",
+        "next.svg",
+        "vercel.svg",
+        "window.svg"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 1,
+      "lastAccessed": 1773478829513,
+      "keyFiles": ["proxy.ts"]
+    },
+    "tests": {
+      "path": "tests",
+      "purpose": "Test files",
+      "fileCount": 0,
+      "lastAccessed": 1773478829514,
+      "keyFiles": []
+    },
+    "coverage/src": {
+      "path": "coverage/src",
+      "purpose": "Source code",
+      "fileCount": 2,
+      "lastAccessed": 1773478829515,
+      "keyFiles": ["index.html", "proxy.ts.html"]
+    },
+    "public/models": {
+      "path": "public/models",
+      "purpose": "Data models",
+      "fileCount": 1,
+      "lastAccessed": 1773478829516,
+      "keyFiles": []
+    },
+    "src/app": {
+      "path": "src/app",
+      "purpose": "Application code",
+      "fileCount": 6,
+      "lastAccessed": 1773478829516,
+      "keyFiles": ["error.tsx", "favicon.ico", "globals.css"]
+    },
+    "src/components": {
+      "path": "src/components",
+      "purpose": "UI components",
+      "fileCount": 0,
+      "lastAccessed": 1773478829516,
+      "keyFiles": []
+    },
+    "src/lib": {
+      "path": "src/lib",
+      "purpose": "Library code",
+      "fileCount": 0,
+      "lastAccessed": 1773478829517,
+      "keyFiles": []
+    },
+    "src/types": {
+      "path": "src/types",
+      "purpose": "Type definitions",
+      "fileCount": 11,
+      "lastAccessed": 1773478829517,
+      "keyFiles": ["api.ts", "aquarium.ts", "codex.ts"]
+    }
+  },
   "hotPaths": [
     {
-      "path": "PRD.md",
-      "accessCount": 9,
-      "lastAccessed": 1773390300562,
+      "path": "src/lib/cache/redis.ts",
+      "accessCount": 6,
+      "lastAccessed": 1773479995762,
       "type": "file"
     },
     {
-      "path": "",
-      "accessCount": 1,
-      "lastAccessed": 1773391497276,
+      "path": "PRD.md",
+      "accessCount": 4,
+      "lastAccessed": 1773478891800,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ui/TimeSlider.tsx",
+      "accessCount": 4,
+      "lastAccessed": 1773479959078,
+      "type": "file"
+    },
+    {
+      "path": "code-audit-report.md",
+      "accessCount": 3,
+      "lastAccessed": 1773479832415,
+      "type": "file"
+    },
+    {
+      "path": "src/app/[locale]/layout.tsx",
+      "accessCount": 3,
+      "lastAccessed": 1773479833699,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ui/TimelapseGenerator.tsx",
+      "accessCount": 3,
+      "lastAccessed": 1773479963778,
+      "type": "file"
+    },
+    {
+      "path": "src/engine/environment/Terrain.tsx",
+      "accessCount": 3,
+      "lastAccessed": 1773479981579,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ui/LiveModeOverlay.tsx",
+      "accessCount": 3,
+      "lastAccessed": 1773480023638,
+      "type": "file"
+    },
+    {
+      "path": "dogfood-output/ux-report.md",
+      "accessCount": 2,
+      "lastAccessed": 1773479328509,
+      "type": "file"
+    },
+    {
+      "path": "prd-compliance-report.md",
+      "accessCount": 2,
+      "lastAccessed": 1773479329852,
+      "type": "file"
+    },
+    {
+      "path": "src/app/api/webhook/github/route.ts",
+      "accessCount": 2,
+      "lastAccessed": 1773479867244,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ui/RecordButton.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1773479966236,
+      "type": "file"
+    },
+    {
+      "path": "src/engine/environment/Bubbles.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1773479972039,
+      "type": "file"
+    },
+    {
+      "path": "src/engine/environment/Particles.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1773479974940,
+      "type": "file"
+    },
+    {
+      "path": "src/engine/environment/Plankton.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1773479976176,
+      "type": "file"
+    },
+    {
+      "path": "src/app/[locale]/[username]/page.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1773479987951,
+      "type": "file"
+    },
+    {
+      "path": "src/app/[locale]/[username]/live/page.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1773479989587,
+      "type": "file"
+    },
+    {
+      "path": "src/lib/github/graphql.ts",
+      "accessCount": 2,
+      "lastAccessed": 1773479996658,
+      "type": "file"
+    },
+    {
+      "path": "src/components/social/KudoButton.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1773480002242,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ui/RecapCarousel.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1773480004870,
+      "type": "file"
+    },
+    {
+      "path": "src/components/merge/MergeInput.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1773480009011,
+      "type": "file"
+    },
+    {
+      "path": "src/components/compare/CompareInput.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1773480013038,
+      "type": "file"
+    },
+    {
+      "path": "src",
+      "accessCount": 2,
+      "lastAccessed": 1773502882831,
       "type": "directory"
+    },
+    {
+      "path": "src/constants/species-map.ts",
+      "accessCount": 1,
+      "lastAccessed": 1773478851940,
+      "type": "file"
+    },
+    {
+      "path": "src/lib/aquarium/species.ts",
+      "accessCount": 1,
+      "lastAccessed": 1773478852313,
+      "type": "file"
+    },
+    {
+      "path": "src/lib/aquarium/evolution.ts",
+      "accessCount": 1,
+      "lastAccessed": 1773478852611,
+      "type": "file"
+    },
+    {
+      "path": "src/lib/codex/codex-v2.ts",
+      "accessCount": 1,
+      "lastAccessed": 1773478862257,
+      "type": "file"
+    },
+    {
+      "path": "src/lib/gamification/achievements.ts",
+      "accessCount": 1,
+      "lastAccessed": 1773478862839,
+      "type": "file"
+    },
+    {
+      "path": "src/lib/aquarium/easter-eggs.ts",
+      "accessCount": 1,
+      "lastAccessed": 1773478863143,
+      "type": "file"
+    },
+    {
+      "path": "src/messages/en/common.json",
+      "accessCount": 1,
+      "lastAccessed": 1773478863654,
+      "type": "file"
+    },
+    {
+      "path": "src/messages/ko/common.json",
+      "accessCount": 1,
+      "lastAccessed": 1773478863680,
+      "type": "file"
+    },
+    {
+      "path": "src/lib/gamification/seasons.ts",
+      "accessCount": 1,
+      "lastAccessed": 1773478879616,
+      "type": "file"
+    },
+    {
+      "path": "src/lib/gamification/quests.ts",
+      "accessCount": 1,
+      "lastAccessed": 1773478880052,
+      "type": "file"
+    },
+    {
+      "path": "src/lib/gamification/kudos-milestones.ts",
+      "accessCount": 1,
+      "lastAccessed": 1773478880385,
+      "type": "file"
+    },
+    {
+      "path": "src/types/fish.ts",
+      "accessCount": 1,
+      "lastAccessed": 1773478880792,
+      "type": "file"
+    },
+    {
+      "path": "src/types/codex.ts",
+      "accessCount": 1,
+      "lastAccessed": 1773478881198,
+      "type": "file"
+    },
+    {
+      "path": "src/lib/codex/codex.ts",
+      "accessCount": 1,
+      "lastAccessed": 1773478881448,
+      "type": "file"
+    },
+    {
+      "path": "dogfood-output/01-landing.png",
+      "accessCount": 1,
+      "lastAccessed": 1773479056838,
+      "type": "file"
+    },
+    {
+      "path": "dogfood-output/02-compare.png",
+      "accessCount": 1,
+      "lastAccessed": 1773479077181,
+      "type": "file"
+    },
+    {
+      "path": "dogfood-output/03-leaderboard.png",
+      "accessCount": 1,
+      "lastAccessed": 1773479091164,
+      "type": "file"
+    },
+    {
+      "path": "src/i18n/config.ts",
+      "accessCount": 1,
+      "lastAccessed": 1773479112844,
+      "type": "file"
+    },
+    {
+      "path": "dogfood-output/05-embed.png",
+      "accessCount": 1,
+      "lastAccessed": 1773479134931,
+      "type": "file"
+    },
+    {
+      "path": "dogfood-output/06-mobile-375.png",
+      "accessCount": 1,
+      "lastAccessed": 1773479160802,
+      "type": "file"
+    },
+    {
+      "path": ".env.example",
+      "accessCount": 1,
+      "lastAccessed": 1773499036170,
+      "type": "file"
+    },
+    {
+      "path": "dogfood-output/screenshots/04-aquarium-tmdry4530.png",
+      "accessCount": 1,
+      "lastAccessed": 1773502285016,
+      "type": "file"
+    },
+    {
+      "path": "dogfood-output/screenshots/05-compare.png",
+      "accessCount": 1,
+      "lastAccessed": 1773502329881,
+      "type": "file"
+    },
+    {
+      "path": "dogfood-output/screenshots/08-empty-input.png",
+      "accessCount": 1,
+      "lastAccessed": 1773502358650,
+      "type": "file"
+    },
+    {
+      "path": "dogfood-output/qa-round2.md",
+      "accessCount": 1,
+      "lastAccessed": 1773502461624,
+      "type": "file"
+    },
+    {
+      "path": "dogfood-output/screenshots/11-leaderboard-r3.png",
+      "accessCount": 1,
+      "lastAccessed": 1773502864737,
+      "type": "file"
+    },
+    {
+      "path": "docs/supabase-schema.md",
+      "accessCount": 1,
+      "lastAccessed": 1773502875221,
+      "type": "file"
     }
   ],
   "userDirectives": []

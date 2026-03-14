@@ -1,0 +1,88 @@
+{
+  "landing": {
+    "title": "Git Aquarium",
+    "subtitle": "Your GitHub repos, alive and swimming",
+    "inputPlaceholder": "Enter GitHub username",
+    "diveButton": "DIVE",
+    "recentTitle": "Recent Aquariums"
+  },
+  "hud": {
+    "alive": "Alive",
+    "fossil": "Fossil",
+    "stars": "Stars"
+  },
+  "auth": {
+    "signIn": "Sign in with GitHub",
+    "signOut": "Sign Out",
+    "loading": "Loading..."
+  },
+  "compare": {
+    "title": "Compare Aquariums",
+    "vs": "VS",
+    "fish": "Fish",
+    "languages": "Languages",
+    "stars": "Stars",
+    "legendary": "Legendary",
+    "activePercent": "Active %",
+    "placeholder1": "Username 1",
+    "placeholder2": "Username 2",
+    "button": "Compare"
+  },
+  "merge": {
+    "title": "Merge Ocean",
+    "subtitle": "Combine 2-5 aquariums into one ocean",
+    "addUser": "+ Add User",
+    "button": "Merge Aquariums",
+    "totalFish": "Total Fish",
+    "languages": "Languages",
+    "stars": "Stars",
+    "species": "Species"
+  },
+  "leaderboard": {
+    "title": "Leaderboard",
+    "diversity": "Diversity",
+    "totalSize": "Total Stars",
+    "legendaryCount": "Legendary",
+    "codexCompletion": "Codex",
+    "weeklyNew": "New",
+    "allTime": "All Time",
+    "monthly": "Monthly",
+    "weekly": "Weekly",
+    "rank": "Rank",
+    "user": "User",
+    "score": "Score",
+    "empty": "No entries yet. Be the first!"
+  },
+  "explore": {
+    "title": "Explore",
+    "subtitle": "Discover amazing aquariums from developers around the world",
+    "trending": "Trending",
+    "newest": "Newest",
+    "mostFish": "Most Fish",
+    "mostDiverse": "Most Diverse",
+    "mostStars": "Most Stars",
+    "allTime": "All Time",
+    "month": "Month",
+    "week": "Week",
+    "today": "Today",
+    "loadMore": "Load More",
+    "empty": "No aquariums found. Try different filters!"
+  },
+  "social": {
+    "guestbook": "Guestbook",
+    "guestbookEmpty": "No messages yet. Visit and leave a message!",
+    "loadMore": "Load More",
+    "feedFish": "Feed Fish",
+    "recentVisitors": "Recent Visitors",
+    "kudoStar": "Star",
+    "kudoBug": "Bug Report",
+    "kudoIdea": "Idea",
+    "report": "Report",
+    "reportSubmitted": "Report submitted"
+  },
+  "embed": {
+    "open": "Open",
+    "fish": "fish",
+    "stars": "stars"
+  }
+}

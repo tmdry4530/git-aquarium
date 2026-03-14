@@ -1,0 +1,56 @@
+name: Fish Species Proposal
+description: Propose a new language → fish species mapping
+title: "[Species]: "
+labels: ["species-proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Propose a new programming language to fish species mapping for Git Aquarium!
+
+  - type: input
+    id: language
+    attributes:
+      label: Programming Language
+      placeholder: e.g. Haskell
+    validations:
+      required: true
+
+  - type: input
+    id: species
+    attributes:
+      label: Proposed Fish Species
+      placeholder: e.g. clownfish
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale
+      description: Why does this language match this species? Think about language characteristics (functional, fast, esoteric, etc.)
+    validations:
+      required: true
+
+  - type: input
+    id: color
+    attributes:
+      label: Suggested Color (hex)
+      description: Should reflect the language's official color or branding if available.
+      placeholder: e.g. #5e5086
+    validations:
+      required: false
+
+  - type: dropdown
+    id: swim_pattern
+    attributes:
+      label: Suggested Swim Pattern
+      options:
+        - linear (fast, straight)
+        - float (gentle drifting)
+        - slow (methodical)
+        - standard (curved paths)
+        - zigzag (quick changes)
+        - stationary (attached)
+    validations:
+      required: false

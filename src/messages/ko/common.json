@@ -1,0 +1,88 @@
+{
+  "landing": {
+    "title": "깃 아쿠아리움",
+    "subtitle": "당신의 GitHub 레포, 살아서 헤엄칩니다",
+    "inputPlaceholder": "GitHub 유저네임 입력",
+    "diveButton": "다이브",
+    "recentTitle": "최근 수족관"
+  },
+  "hud": {
+    "alive": "살아있는",
+    "fossil": "화석",
+    "stars": "스타"
+  },
+  "auth": {
+    "signIn": "GitHub으로 로그인",
+    "signOut": "로그아웃",
+    "loading": "로딩 중..."
+  },
+  "compare": {
+    "title": "수족관 비교",
+    "vs": "VS",
+    "fish": "물고기",
+    "languages": "언어",
+    "stars": "스타",
+    "legendary": "전설급",
+    "activePercent": "활성 %",
+    "placeholder1": "유저네임 1",
+    "placeholder2": "유저네임 2",
+    "button": "비교하기"
+  },
+  "merge": {
+    "title": "합체 수족관",
+    "subtitle": "2-5개의 수족관을 하나의 바다로 합치기",
+    "addUser": "+ 유저 추가",
+    "button": "수족관 합치기",
+    "totalFish": "전체 물고기",
+    "languages": "언어",
+    "stars": "스타",
+    "species": "종"
+  },
+  "leaderboard": {
+    "title": "리더보드",
+    "diversity": "다양성",
+    "totalSize": "전체 스타",
+    "legendaryCount": "전설급",
+    "codexCompletion": "도감",
+    "weeklyNew": "신규",
+    "allTime": "전체 기간",
+    "monthly": "월간",
+    "weekly": "주간",
+    "rank": "순위",
+    "user": "유저",
+    "score": "점수",
+    "empty": "아직 기록이 없습니다. 첫 번째가 되어보세요!"
+  },
+  "explore": {
+    "title": "탐색",
+    "subtitle": "전 세계 개발자들의 멋진 수족관을 발견하세요",
+    "trending": "인기",
+    "newest": "최신",
+    "mostFish": "물고기 많은",
+    "mostDiverse": "다양한",
+    "mostStars": "스타 많은",
+    "allTime": "전체 기간",
+    "month": "월간",
+    "week": "주간",
+    "today": "오늘",
+    "loadMore": "더 보기",
+    "empty": "수족관을 찾을 수 없습니다. 다른 필터를 시도해보세요!"
+  },
+  "social": {
+    "guestbook": "방명록",
+    "guestbookEmpty": "아직 메시지가 없습니다. 방문해서 메시지를 남겨보세요!",
+    "loadMore": "더 보기",
+    "feedFish": "먹이 주기",
+    "recentVisitors": "최근 방문자",
+    "kudoStar": "별",
+    "kudoBug": "버그 리포트",
+    "kudoIdea": "아이디어",
+    "report": "신고",
+    "reportSubmitted": "신고가 접수되었습니다"
+  },
+  "embed": {
+    "open": "열기",
+    "fish": "물고기",
+    "stars": "스타"
+  }
+}
