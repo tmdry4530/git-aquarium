@@ -8,12 +8,13 @@ function generateInitialPosition(
   index: number,
   total: number,
 ): [number, number, number] {
-  const spread = Math.min(total * 0.5, 25)
-  const angle = (index / Math.max(total, 1)) * Math.PI * 2
-  const radius = 3 + Math.random() * spread
+  const spread = Math.min(total * 0.4, 20)
+  const goldenAngle = 2.399963 // radians
+  const angle = index * goldenAngle
+  const radius = 2 + (index / Math.max(total, 1)) * spread
   return [
     Math.cos(angle) * radius,
-    1 + Math.random() * 6,
+    2 + Math.random() * 5,
     Math.sin(angle) * radius,
   ]
 }

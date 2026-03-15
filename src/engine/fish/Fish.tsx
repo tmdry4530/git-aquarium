@@ -101,14 +101,12 @@ function Fish({ data, initialPosition }: FishProps) {
     }
   })
 
-  const meshScale = useMemo<[number, number, number]>(
-    () => [
-      data.size * evolutionScale * speciesScale[0],
-      data.size * evolutionScale * speciesScale[1],
-      data.size * evolutionScale * speciesScale[2],
-    ],
-    [data.size, evolutionScale, speciesScale],
-  )
+  const meshScale = useMemo<[number, number, number]>(() => {
+    // Clamp size to prevent giant fish dominating the scene
+    const clampedSize = Math.min(data.size, 1.8)
+    const s = clampedSize * evolutionScale
+    return [s * speciesScale[0], s * speciesScale[1], s * speciesScale[2]]
+  }, [data.size, evolutionScale, speciesScale])
 
   const handlePointerOver = useCallback(
     (e: ThreeEvent<PointerEvent>) => {
