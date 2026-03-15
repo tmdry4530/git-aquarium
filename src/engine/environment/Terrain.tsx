@@ -19,13 +19,17 @@ function Terrain({ terrainHeights }: TerrainProps) {
 
     for (let i = 0; i < count; i++) {
       const x = posAttr.getX(i)
+      const z = posAttr.getZ(i)
       const normalizedX = (x + 40) / 80
-      const heightIndex = Math.min(
+      const idx = Math.min(
         Math.floor(normalizedX * (heights.length - 1)),
         heights.length - 1,
       )
-      const h = ((heights[heightIndex] ?? 0) / maxHeight) * 2
-      posAttr.setY(i, posAttr.getY(i) + h)
+      // Gentle rolling hills instead of sharp spikes (max 0.8 height)
+      const h = ((heights[idx] ?? 0) / maxHeight) * 0.8
+      // Add subtle noise for natural look
+      const noise = Math.sin(x * 0.3) * Math.cos(z * 0.3) * 0.15
+      posAttr.setY(i, h + noise)
     }
 
     posAttr.needsUpdate = true

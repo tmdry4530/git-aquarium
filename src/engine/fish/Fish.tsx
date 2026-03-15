@@ -28,7 +28,6 @@ const EVOLUTION_SCALE: Record<string, number> = {
 function Fish({ data, initialPosition }: FishProps) {
   const meshRef = useRef<THREE.Mesh>(null)
   const glowRef = useRef<THREE.Mesh>(null)
-  const shieldRef = useRef<THREE.Mesh>(null)
 
   const hoverFish = useAquariumStore((s) => s.hoverFish)
   const selectFish = useAquariumStore((s) => s.selectFish)
@@ -66,38 +65,26 @@ function Fish({ data, initialPosition }: FishProps) {
 
   // Evolution visual effects
   const materialProps = useMemo(() => {
-    const color = isFossil ? '#666666' : data.color
-    const opacity = isFossil ? 0.6 : isFry ? 0.7 : isEgg ? 0.5 : 1
+    const color = isFossil ? '#888888' : data.color
+    const opacity = isFossil ? 0.6 : isFry ? 0.8 : isEgg ? 0.5 : 1
     const transparent = isFossil || isFry || isEgg
-    const emissive = data.hasReadme ? data.color : '#000000'
-    const emissiveIntensity = isLegendary
-      ? 0.4
-      : isElder
-        ? 0.2
-        : data.hasReadme
-          ? 0.15
-          : 0
+    // All fish get a slight self-illumination so they pop against dark background
+    const emissive = isFossil ? '#000000' : data.color
+    const emissiveIntensity = isLegendary ? 0.5 : isElder ? 0.3 : 0.2
 
     return { color, opacity, transparent, emissive, emissiveIntensity }
-  }, [isFossil, isFry, isEgg, isLegendary, isElder, data.color, data.hasReadme])
+  }, [isFossil, isFry, isEgg, isLegendary, isElder, data.color])
 
   // Elder/Legendary glow effect
   const showGlow = isElder || isLegendary
   const glowColor = isLegendary ? '#ffd700' : data.color
 
-  // License shield aura
-  const showShield = data.hasLicense && !isEgg && !isFossil
-
-  // Animate glow and shield
+  // Animate glow
   useFrame((state) => {
     if (glowRef.current && showGlow) {
       const pulse = Math.sin(state.clock.elapsedTime * 2) * 0.5 + 0.5
       const mat = glowRef.current.material as THREE.MeshBasicMaterial
-      mat.opacity = isLegendary ? 0.15 + pulse * 0.15 : 0.08 + pulse * 0.08
-    }
-    if (shieldRef.current) {
-      const mat = shieldRef.current.material as THREE.MeshBasicMaterial
-      mat.opacity = isHovered ? 0.3 : 0.1
+      mat.opacity = isLegendary ? 0.1 + pulse * 0.1 : 0.05 + pulse * 0.05
     }
   })
 
@@ -163,37 +150,15 @@ function Fish({ data, initialPosition }: FishProps) {
         />
       </mesh>
 
-      {/* Elder/Legendary glow aura */}
+      {/* Elder/Legendary glow aura — small halo around the fish */}
       {showGlow && (
-        <mesh
-          ref={glowRef}
-          position={effectivePosition}
-          scale={meshScale.map((s) => s * 1.3) as [number, number, number]}
-        >
-          <sphereGeometry args={[0.35, 10, 10]} />
+        <mesh ref={glowRef} position={effectivePosition} scale={meshScale}>
+          <sphereGeometry args={[0.5, 8, 8]} />
           <meshBasicMaterial
             color={glowColor}
             transparent
-            opacity={0.1}
+            opacity={0.08}
             side={THREE.BackSide}
-            depthWrite={false}
-          />
-        </mesh>
-      )}
-
-      {/* License shield aura */}
-      {showShield && (
-        <mesh
-          ref={shieldRef}
-          position={effectivePosition}
-          scale={meshScale.map((s) => s * 1.15) as [number, number, number]}
-        >
-          <sphereGeometry args={[0.38, 10, 10]} />
-          <meshBasicMaterial
-            color="#4488ff"
-            transparent
-            opacity={0.1}
-            side={THREE.FrontSide}
             depthWrite={false}
           />
         </mesh>

@@ -129,17 +129,17 @@ function createAngelfish(): THREE.BufferGeometry {
 }
 
 function createManta(): THREE.BufferGeometry {
-  // Very wide, flat
+  // Wide but proportional — more like a ray than a plank
   return buildFish({
-    bodyW: 0.5,
+    bodyW: 0.25,
     bodyH: 0.08,
-    bodyL: 0.35,
-    tailLen: 0.25,
-    tailSpread: 0.05,
+    bodyL: 0.3,
+    tailLen: 0.2,
+    tailSpread: 0.04,
     dorsalH: 0.03,
-    dorsalL: 0.1,
-    finW: 0.3,
-    finL: 0.25,
+    dorsalL: 0.08,
+    finW: 0.18,
+    finL: 0.2,
   })
 }
 
@@ -391,7 +391,7 @@ function getSpeciesGeometry(species: FishSpecies): THREE.BufferGeometry {
 
 const SPECIES_SCALE: Record<FishSpecies, [number, number, number]> = {
   angelfish: [1.2, 1.2, 1.2],
-  manta: [1.5, 1.0, 1.5],
+  manta: [1.2, 1.0, 1.2],
   turtle: [1.3, 1.3, 1.3],
   pufferfish: [1.2, 1.2, 1.2],
   dolphin: [1.3, 1.2, 1.3],
