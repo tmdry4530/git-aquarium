@@ -1,10 +1,41 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { AquariumClient } from './aquarium-client'
+import { fetchGitHubData } from '@/lib/github/client'
+import { mapToAquariumData } from '@/lib/aquarium/mapper'
+import { getCached, setCached, CACHE_KEYS, CACHE_TTL } from '@/lib/cache/redis'
 import type { AquariumData } from '@/types/aquarium'
 
 interface AquariumPageProps {
   params: Promise<{ locale: string; username: string }>
+}
+
+async function getAquariumData(username: string): Promise<AquariumData | null> {
+  try {
+    const cached = await getCached<AquariumData>(CACHE_KEYS.aquarium(username))
+    if (cached) return cached.data
+  } catch {
+    // Cache miss — continue
+  }
+
+  try {
+    const { user, repos } = await fetchGitHubData(username)
+    const data = mapToAquariumData(user, repos)
+
+    try {
+      await setCached(CACHE_KEYS.aquarium(username), data, {
+        ttl: CACHE_TTL.AQUARIUM,
+      })
+    } catch {
+      // Cache write failure is non-critical
+    }
+
+    return data
+  } catch (err) {
+    const message = err instanceof Error ? err.message : ''
+    if (message.includes('NOT_FOUND')) return null
+    throw err
+  }
 }
 
 export async function generateMetadata({
@@ -22,20 +53,9 @@ export async function generateMetadata({
 
 export default async function AquariumPage({ params }: AquariumPageProps) {
   const { username } = await params
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'
+  const data = await getAquariumData(username)
 
-  let res: Response
-  try {
-    res = await fetch(`${appUrl}/api/aquarium/${username}`, {
-      next: { revalidate: 1800 },
-    })
-  } catch {
-    throw new Error('Failed to fetch aquarium data')
-  }
+  if (!data) notFound()
 
-  if (res.status === 404) notFound()
-  if (!res.ok) throw new Error('Failed to fetch aquarium data')
-
-  const data = (await res.json()) as AquariumData
   return <AquariumClient data={data} />
 }
